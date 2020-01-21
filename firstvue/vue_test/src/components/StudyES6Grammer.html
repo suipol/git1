@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>StudyES6Grammer</title>
+    <script >
+       for(let i = 0; i < 10; i++){
+          console.log(i);
+        }
+//测试let
+        {
+          let j = 100;
+        }
+        // console.log(j);
+        // Uncaught ReferenceError: j is not defined at StudyES6Grammer.html:14
+
+//测试constconst实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动
+// 因此，将一个对象声明为常量必须非常小心
+    //     const con = 1;
+    //     con++
+    //     StudyES6Grammer.html:19 Uncaught TypeError: Assignment to constant variable.
+    // at StudyES6Grammer.html:19
+
+//测试变量提升
+        // var 的情况
+          // console.log(foo); // 输出undefined
+          // var foo = 2;
+
+          // // let 的情况
+          // console.log(bar); // 报错ReferenceError
+          // let bar = 2;
+
+//暂时性死区
+          // var tmp = 123;
+
+          // if (true) {
+          //   tmp = 'abc'; // ReferenceError
+          //   let tmp;
+          // }
+//在当前块作用域中有声明此变量,那么在此之前,此变量不可访问,“暂时性死区”也意味着typeof不再是一个百分之百安全的操作。
+// 暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。
+          // typeof x; // ReferenceError
+          // let x;
+
+//           ES6 声明变量的六种方法
+// ES5 只有两种声明变量的方法：var命令和function命令。ES6 除了添加let和const命令，后面章节还会提到，另外两种声明变量的方法：import命令和class命令。
+
+// 如果在 Node 的 REPL 环境，可以写成 global.a
+// 或者采用通用方法，写成 this.a
+      // var a = 1;
+      // window.a // 1
+      // let b = 1;
+      // window.b // undefined
+
+// //unicode表示
+//       console.log("\u0061");  //a
+
+//for...of遍历器接口
+        // for (let codePoint of 'foo') {
+        //   console.log(codePoint)//'f''o''o'
+        // }
+
+//字符串方法
+        //         let s = 'Hello world!';
+
+        // s.startsWith('Hello') // true
+        // s.endsWith('!') // true
+        // s.includes('o') // true
+        // console.log('x'.repeat(3) )   // "xxx"
+      window.onload = function(){
+        document.getElementsByTagName("div")[0].style.backgroundColor = "red";
+      }
+
+    </script>
+  </head>
+  <body>
+<div>
+  hello world!
+</div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <style>
+      .class1 {
+        background: #444;
+        color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first">
+      <p>{{ first }}</p>
+      <button @click="hehe">反转字符串</button>
+      <input type="text" v-model="first" />
+      <input type="checkbox" v-model="use" />
+      <div :class="{'class1' : use}" v-if="use">
+        ssss
+      </div>
+      <p>first : {{first}}</p>
+
+      <p v-html="first"></p>
+    </div>
+    -->
+    <div id="vue_det">
+      <h1>site : {{site}}</h1>
+      <h1>url : {{url}}</h1>
+    </div>
+    <script type="text/javascript">
+      var vm = new Vue({
+        el: ".first",
+        data: {
+          first: "<h3>123456<h3>",
+          second: "sssssss",
+          third: "bbbbbb",
+          use: false
+        },
+        methods: {
+          hehe: function() {
+            this.first = this.first
+              .split("")
+              .reverse()
+              .join("");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <p v-once>{{ foo }}</p>
+      <span v-html="rawhtml"></span>
+      <button v-on:click="foo='baz'"></button>
+    </div>
+    <script>
+      var obj = {
+        foo: 'bar',
+        rawhtml: ' <h3 style="background: red;">hhhhhhh</h3>'
+      }
+      var vm = new Vue({
+        el: '#app',
+        data: obj
+      })
+    </script>
+  </body>
+</html>
